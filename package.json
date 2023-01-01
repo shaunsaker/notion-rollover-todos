@@ -4,7 +4,7 @@
   "description": "A script that generates a new Notion page every day based on the previous day’s template. It also removes completed TODOs.",
   "author": "Shaun Saker <sakershaun@gmail.com>",
   "license": "Apache-2.0",
-  "main": "build/src/main.js",
+  "main": "dist/main.js",
   "scripts": {
     "prepare": "husky install",
     "dev": "npx vite-node -w ./src/main.ts",
@@ -14,7 +14,8 @@
     "lint:ts": "tsc",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "build": "tsc -p tsconfig.release.json"
+    "build": "tsc -p tsconfig.release.json",
+    "start": "node ./dist/main.js"
   },
   "engines": {
     "node": ">= 18.12 <19"
