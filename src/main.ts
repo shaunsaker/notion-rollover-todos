@@ -1,4 +1,3 @@
-import { CreatePageParameters, PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import dayjs from 'dayjs'
 import dotenv from 'dotenv'
 import { createPage } from './services/notion/createPage'
@@ -36,18 +35,10 @@ async function main() {
   }
 
   // for each of the pages
-  for await (const pageResult of doneItemsResponse.results) {
-    // recreate a page in the archive database and mark the Completed On column
-    // FIXME: fix the types here so that we don't need to leak abstractions
-    const page = pageResult as PageObjectResponse
-
-    // @ts-expect-error ts is complaining about a page_id but we don't need it
-    const archivedPageParams: CreatePageParameters = {
-      ...(page as PageObjectResponse),
-      parent: {
-        type: 'database_id',
-        database_id: todosArchiveDatabase.id,
-      },
+  for await (const page of doneItemsResponse.results) {
+    // recreate a page in the archive database
+    await createPage(todosArchiveDatabase.id, {
+      ...page,
       properties: {
         ...page.properties,
         'Completed On': {
@@ -58,9 +49,9 @@ async function main() {
           },
         },
       },
-    }
-
-    await createPage(archivedPageParams)
+      // @ts-expect-error notion types incorrect - the external prop is missing intentionally
+      icon: page.icon,
+    })
 
     // delete the page from the original database
     await deletePage(page.id)
