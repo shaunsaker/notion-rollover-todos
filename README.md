@@ -2,7 +2,7 @@
 
 # What is it?
 
-A script that generates a new Notion page every day based on the previous day’s template. It also removes completed TODOs.
+A script that archives your completed TODOs from a Notion database.
 
 # Why?
 
@@ -10,6 +10,6 @@ I want to keep track of completed TODOs over time. I might also want to see some
 
 # TODOs
 
-- [ ] Create local script using the Notion API
+- [x] Create local script using the Notion API
 - [ ] Deploy script to the cloud (try supabase)
 - [ ] Open source it so that other’s can use it
