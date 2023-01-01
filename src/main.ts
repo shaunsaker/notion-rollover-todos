@@ -46,6 +46,8 @@ async function main() {
   console.log('Fetched the TODOs database!')
 
   // fetch the todos archive database
+  console.log('Fetching the TODOs archive database...')
+
   const todosArchiveDatabase = await getDatabase(TODOS_ARCHIVE_DATABASE_ID)
 
   if (!todosArchiveDatabase) {
