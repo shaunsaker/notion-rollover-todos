@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "npx vite-node -w ./src/main.ts",
     "lint": "npm-run-all --parallel lint:*",
-    "lint:prettier": "prettier .",
-    "lint:eslint": "eslint . --ext .ts",
+    "lint:prettier": "prettier -c \"**/*.{ts,tsx}\"",
+    "lint:eslint": "eslint --ext [.ts,.tsx] .",
     "lint:ts": "tsc",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
