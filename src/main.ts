@@ -63,7 +63,7 @@ async function main() {
     // recreate a page in the archive database
     console.log(`Creating a new page in the TODOs archive database...`)
 
-    await createPage(todosArchiveDatabase.id, {
+    const createArchivedTodoResponse = await createPage(todosArchiveDatabase.id, {
       ...page,
       properties: {
         ...page.properties,
@@ -78,6 +78,11 @@ async function main() {
       // @ts-expect-error notion types incorrect - the external prop is missing intentionally
       icon: page.icon,
     })
+
+    // if there's an error in creating the archived TODO, break (otherwise it's deleted below)
+    if (!createArchivedTodoResponse) {
+      break
+    }
 
     console.log(`Created a new page in the TODOs archive database!`)
 

@@ -10,6 +10,7 @@ I want to keep track of done TODOs over time. I might also want to see some stat
 
 ## Caveats
 
+- If you add any new properties to your TODOs database, you need to also add it to the TODOs archive database.
 - If a done TODO has children pages, these won't be copied to the archive database. If there's interest in this I can make it happen in the future but for now, I don't need it.
 
 ## Setup
