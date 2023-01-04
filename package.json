@@ -1,6 +1,6 @@
 {
   "name": "node-typescript-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A script that generates a new Notion page every day based on the previous day’s template. It also removes completed TODOs.",
   "author": "Shaun Saker <sakershaun@gmail.com>",
   "license": "Apache-2.0",
