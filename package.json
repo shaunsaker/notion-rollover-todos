@@ -25,6 +25,7 @@
     "@notionhq/client": "^2.2.3",
     "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.0",
     "tslib": "~2.4"
   },
   "devDependencies": {
