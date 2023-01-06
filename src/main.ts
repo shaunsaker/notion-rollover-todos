@@ -70,8 +70,8 @@ async function main() {
         'Completed On': {
           type: 'date',
           date: {
-            // set the completed on date to yesterday
-            start: dayjs().subtract(1, 'day').toISOString(),
+            // set the completed on date to the last edited time
+            start: page.last_edited_time,
           },
         },
       },
