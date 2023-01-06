@@ -1,6 +1,6 @@
 {
   "name": "notion-rollover-todos",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Shaun Saker <sakershaun@gmail.com>",
   "license": "Apache-2.0",
   "main": "dist/main.js",
